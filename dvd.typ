@@ -8,7 +8,7 @@
   rgb("#9C27B0"),
   rgb("#673AB7"),
   rgb("#3F51B5"),
-  rgb("#2196F3"),
+  rgb("#009999"),
   rgb("#03A9F4"),
   rgb("#00BCD4"),
   rgb("#009688"),
@@ -42,22 +42,22 @@
       if loc.page() == 1 {
         return
       }
-      box(stroke: (bottom: 0.7pt), inset: 0.2em)[#text(font: "New Computer Modern Sans")[#author #h(1fr)#title]]
+      box(stroke: (bottom: 0.7pt), inset: 0.2em)[#text(font: "Inter", weight: 300, 10pt)[#author #h(1fr)#title]]
     }),
   )
 
   set heading(numbering: "1.")
   show heading: it => {
-    set text(font: "New Computer Modern Sans")
+    set text(font: "Inter", weight: 600, 13pt)
     set par(first-line-indent: 0em)
 
     if it.numbering != none {
-      text(rgb("#2196F3"), weight: 500)[#sym.section]
+      text(rgb("#009999"), weight: 400)[#sym.section]
 
-      text(rgb("#2196F3"))[#counter(heading).display() ]
+      text(rgb("#009999"))[#counter(heading).display() ]
     }
     it.body
-    v(0.6em)
+    v(0.5em)
   }
 
   set text(font: "New Computer Modern", lang: "en")
@@ -67,12 +67,12 @@
 
   // Title row.
   align(center)[
-    #set text(font: "New Computer Modern Sans")
-    #block(text(weight: 700, 25pt, title))
-    #v(0.4em, weak: true)
-    #if subtitle != none [#text(18pt, weight: 500)[#subtitle]]
-    #v(0.3em, weak: true)
-    #if author != none [#text(14pt)[by #author]]
+    #set text(font: "Inter")
+    #block(text(weight: 700, 20pt, title))
+    #v(0.9em, weak: true)
+    #if subtitle != none [#text(16pt, weight: 500)[#subtitle]]
+    #v(1.5em, weak: true)
+    #if author != none [#text(12pt)[by #author]]
 
   ]
 
@@ -85,11 +85,11 @@
 
   show outline.entry.where(level: 1): it => {
 
-    text(font: "New Computer Modern Sans", rgb("#2196F3"))[#strong[#it]]
+    text(font: "Inter", weight: 300, 12pt, rgb("#009999"))[#strong[#it]]
   }
   show outline.entry: it => {
     h(1em)
-    text(font: "New Computer Modern Sans", rgb("#2196F3"))[#it]
+    text(font: "Inter", weight: 400, 10pt, rgb("#009999"))[#it]
   }
 
 
@@ -103,10 +103,10 @@
 }
 
 #let thmtitle(t, color: rgb("#000000")) = {
-  return text(font: "New Computer Modern Sans", weight: "semibold", fill: color)[#t]
+  return text(font: "Inter", weight: "semibold", fill: color)[#t]
 }
 #let thmname(t, color: rgb("#000000")) = {
-  return text(font: "New Computer Modern Sans", fill: color)[(#t)]
+  return text(font: "Inter", fill: color)[(#t)]
 }
 
 #let thmtext(t, color: rgb("#000000")) = {
