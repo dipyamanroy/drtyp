@@ -1,7 +1,7 @@
-#import "@preview/dvdtyp:1.0.0": *
+#import "@preview/drtyp:1.0.0": *
 
-#show: dvdtyp.with(
-  title: "dvd.typ",
+#show: drtyp.with(
+  title: "dr.typ",
   subtitle: [potato, tomato, banana],
   author: "among us",
   abstract: lorem(50),
